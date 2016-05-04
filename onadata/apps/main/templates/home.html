@@ -86,7 +86,7 @@
 </div>
 <div class="row">
     <div class="col-md-8">
-        <img src="{{STATIC_URL}}images/onadata-computer.png" width="497" height="363"/>
+        <img src="{{STATIC_URL}}images/Landing_Page_Picture.png" width="497" height="363"/>
     </div>
     <div class="col-md-4">
         {% url "auth_login" as login_url %}
@@ -97,16 +97,9 @@
                         <br/>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">{% trans 'Sign in' %}</button>
                         <br/>
-                        <p> Or if you want to create an account, please </p>
-                        {% url "registration_register" as registration_url %}
-                        {% blocktrans %}
-                        <a class="btn btn-info btn-lg btn-block" href="{{ registration_url }}">Sign up</a>
-                        {% endblocktrans %}
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
-            {% url "auth_password_reset" as reset_url %}
-            <p>{% blocktrans %}Can't access your account? <a href="{{ reset_url }}">Reset your password.</a>{% endblocktrans %}</p>
         </div>
         </div>
         {% endblock %}

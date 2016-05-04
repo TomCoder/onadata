@@ -26,7 +26,7 @@
       <tr>
         <th>{%  trans "Name" %}</th>
         <th>{%  trans "Submissions" %}</th>
-        <th>{%  trans "Enter Data" %}</th>
+        <!--<th>{%  trans "Enter Data" %}</th>-->
         <th>{%  trans "View" %}</th>
         <th>{%  trans "Download" %}</th>
         <th>{%  trans "Last Submission" %}</th>
@@ -50,9 +50,9 @@
             <div class="created text-right">CREATED: {{ xform.date_created|date:"N d, Y" }}</div>
         </td>
         <td class="centered">{{ submission_count|intcomma }}</td>
-        <td class="centered">
+        <!--<td class="centered">
                 <a class="btn" href="{% url "onadata.apps.logger.views.enter_data" xform.user.username xform.id_string %}"><i class="icon-edit"></i> {% trans "Web" %}</a>
-        </td>
+        </td>-->
         <td class="centered">
                 {% if not xform.encrypted and has_instances_with_geopoints %}
                     <a href="{% url "onadata.apps.viewer.views.map_view" xform.user.username xform.id_string %}" data-original-title="{% trans 'View Map' %}" rel="tooltip">
